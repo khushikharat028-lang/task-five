@@ -12,8 +12,8 @@ document.querySelector('#app').innerHTML = `
     <img src="${viteLogo}" class="vite" alt="Vite logo" />
   </div>
   <div>
-    <h1>Get started</h1>
-    <p>Edit <code>src/main.js</code> and save to test <code>HMR</code></p>
+    <h1>Task 6 - DevOps Workflow</h1>
+    <p>Developer: Khushi Kharat | Branch: dev-khushi1</p>
   </div>
   <button id="counter" type="button" class="counter"></button>
 </section>
