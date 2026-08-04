@@ -1,5 +1,8 @@
 name: Auto Merge to Development
 
+permissions:
+  contents: write
+
 on:
   push:
     branches:
@@ -26,4 +29,4 @@ jobs:
           git fetch origin
           git checkout development
           git merge origin/${{ github.ref_name }} --no-edit
-          git push origin development
+          git push origin HEAD:development
