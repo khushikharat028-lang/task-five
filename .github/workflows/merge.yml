@@ -29,4 +29,4 @@ jobs:
           git fetch origin
           git checkout development
           git merge origin/${{ github.ref_name }} --no-edit
-          git push origin HEAD:development
+          git push https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/taskcubeage/task-five-team.git HEAD:development
