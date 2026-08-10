@@ -1,0 +1,30 @@
+name: Sync Team Development to Company
+
+on:
+  push:
+    branches:
+      - development
+
+permissions:
+  contents: read
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Team Repository
+        uses: actions/checkout@v4
+
+      - name: Push development to Company Repository
+        env:
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+        run: |
+          git config user.name "taskcubeage"
+          git config user.email "dummy@cubeagetech.com"
+
+          git remote add company https://x-access-token:${PAT_TOKEN}@github.com/khushikharat028-lang/task-five.git
+
+          git fetch company development
+
+          git push company HEAD:development --force
