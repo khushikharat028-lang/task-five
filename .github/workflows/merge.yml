@@ -6,6 +6,10 @@ on:
       - dev-khushi1
       - dev-khushi2
 
+concurrency:
+  group: auto-merge-development
+  cancel-in-progress: true      
+
 permissions:
   contents: write
 
